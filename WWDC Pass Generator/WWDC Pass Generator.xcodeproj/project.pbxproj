@@ -66,12 +66,10 @@
 		984E21912498904D00560E2C /* WWDC Pass Generator */ = {
 			isa = PBXGroup;
 			children = (
-				984E21922498904D00560E2C /* AppDelegate.swift */,
-				984E21942498904D00560E2C /* ContentView.swift */,
-				984E21BB2498DD0F00560E2C /* TicketPassView.swift */,
-				981DCE9524992016003CF077 /* InspectorView.swift */,
 				981DCE972499AF43003CF077 /* PassConfiguration.swift */,
 				98BE4F1F249A4A4700F44EAB /* LocalizedStrings.swift */,
+				98BE4F21249A543300F44EAB /* Views */,
+				984E21922498904D00560E2C /* AppDelegate.swift */,
 				984E21BD2498E9C500560E2C /* Extensions */,
 				984E21BA2498D57A00560E2C /* Support Files */,
 				984E21982498905000560E2C /* Preview Content */,
@@ -104,6 +102,16 @@
 				981DCE9324991D2E003CF077 /* FontExtension.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		98BE4F21249A543300F44EAB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				984E21942498904D00560E2C /* ContentView.swift */,
+				984E21BB2498DD0F00560E2C /* TicketPassView.swift */,
+				981DCE9524992016003CF077 /* InspectorView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
