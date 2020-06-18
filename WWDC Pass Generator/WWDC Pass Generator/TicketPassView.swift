@@ -80,7 +80,7 @@ struct TicketPassView: View {
         }
         .frame(width: viewSize.width, height: viewSize.height, alignment: .topLeading)
         .padding(.all, viewPadding)
-        .background(LinearGradient(gradient: Gradient(colors: [.init(hex: "8b8b8b"), .init(hex: "111111")]), startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient(gradient: Gradient(colors: [config.color1, config.color2]), startPoint: .top, endPoint: .bottom))
         .mask(viewShape.fill(style: FillStyle(eoFill: true)))
         .shadow(radius: 2)
     }

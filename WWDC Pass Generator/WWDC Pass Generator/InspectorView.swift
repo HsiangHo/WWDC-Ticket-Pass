@@ -17,29 +17,67 @@ struct InspectorView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            DatePicker(LocalizedStrings.ExpireDate, selection: $config.expiryDate)
-                .padding(.bottom, 30)
-            Text(LocalizedStrings.Event)
-                .font(.appFont(size: 12))
-            TextField(LocalizedStrings.EventPlaceHolder, text: $config.eventName)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .disabled(true)
-                .padding(editorPadding)
-            Text(LocalizedStrings.EventAttendee)
-                .font(.appFont(size: 12))
-            TextField(LocalizedStrings.EventAttendeePlaceHolder, text: $config.attendee)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(editorPadding)
-            Text(LocalizedStrings.EventDates)
-                .font(.appFont(size: 12))
-            TextField(LocalizedStrings.EventDatesPlaceHolder, text: $config.dates)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(editorPadding)
-            Text(LocalizedStrings.EventLocation)
-                .font(.appFont(size: 12))
-            TextField(LocalizedStrings.EventLocationPlaceHolder, text: $config.location)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding(editorPadding)
+            Group {
+                Text(LocalizedStrings.Event)
+                    .font(.appFont(size: 12))
+                    .padding(.top, 15)
+                TextField(LocalizedStrings.EventPlaceHolder, text: $config.eventName)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .disabled(true)
+                    .padding(editorPadding)
+                Text(LocalizedStrings.EventAttendee)
+                    .font(.appFont(size: 12))
+                TextField(LocalizedStrings.EventAttendeePlaceHolder, text: $config.attendee)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(editorPadding)
+                Text(LocalizedStrings.EventDates)
+                    .font(.appFont(size: 12))
+                TextField(LocalizedStrings.EventDatesPlaceHolder, text: $config.dates)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(editorPadding)
+                Text(LocalizedStrings.EventLocation)
+                    .font(.appFont(size: 12))
+                TextField(LocalizedStrings.EventLocationPlaceHolder, text: $config.location)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(editorPadding)
+            }
+
+            Group {
+                Text(LocalizedStrings.Color1)
+                    .font(.appFont(size: 12))
+                EmbeddedColorWell(selectedColor: $config.color1)
+                    .frame(width: 100, height: 20, alignment: .topLeading)
+                    .padding(editorPadding)
+
+                Text(LocalizedStrings.Color2)
+                    .font(.appFont(size: 12))
+                EmbeddedColorWell(selectedColor: $config.color2)
+                    .frame(width: 100, height: 20, alignment: .topLeading)
+                    .padding(editorPadding)
+            }
+
+            Divider()
+                .padding(EdgeInsets(top: 10, leading: 0, bottom: 20, trailing: 0))
+
+            Group {
+                HStack(alignment: .firstTextBaseline) {
+                    Text(LocalizedStrings.PassTypeID)
+                        .font(.appFont(size: 12))
+                    TextField(LocalizedStrings.PassTypeIDPlaceHolder, text: $config.passTypeID)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(editorPadding)
+                }
+                HStack(alignment: .firstTextBaseline) {
+                    Text(LocalizedStrings.TeamID)
+                        .font(.appFont(size: 12))
+                    TextField(LocalizedStrings.TeamIDPlaceHolder, text: $config.teamID)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(editorPadding)
+                }
+                DatePicker(LocalizedStrings.ExpireDate, selection: $config.expiryDate)
+                    .padding(editorPadding)
+            }
+
             Spacer()
         }
     }

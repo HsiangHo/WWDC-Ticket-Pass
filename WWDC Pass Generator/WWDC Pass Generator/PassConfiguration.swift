@@ -17,4 +17,6 @@ class PassConfiguration: ObservableObject {
     @Published var attendee: String = "Xiang"
     @Published var dates: String = "June 22-26, 2020"
     @Published var location: String = "Online"
+    @Published var color1: Color = .init(hex: "8b8b8b")
+    @Published var color2: Color = .init(hex: "111111")
 }
