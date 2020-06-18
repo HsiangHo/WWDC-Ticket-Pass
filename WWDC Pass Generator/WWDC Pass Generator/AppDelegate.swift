@@ -17,8 +17,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
 
-        let windowStyles: NSWindow.StyleMask = [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView]
-        let windowRect = NSRect.init(x: 0, y: 0, width: 600, height: 400)
+        let windowStyles: NSWindow.StyleMask = [.titled, .closable, .miniaturizable]
+        let windowRect = NSRect.init(x: 0, y: 0, width: 700, height: 400)
         window = NSWindow.init(contentRect: windowRect, styleMask: windowStyles, backing: .buffered, defer: true)
         window.title = "Title"
         window.titleVisibility = .hidden
@@ -36,6 +36,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
+    }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        true
     }
 
 }
