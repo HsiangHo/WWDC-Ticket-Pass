@@ -9,6 +9,7 @@
 import Foundation
 
 struct LocalizedStrings {
+    static let ExpireDate = NSLocalizedString("Expire Date:", comment: "")
     static let Event = NSLocalizedString("Event:", comment: "")
     static let EventPlaceHolder = NSLocalizedString("WWDC Event Name", comment: "")
     static let EventAttendee = NSLocalizedString("Attendee:", comment: "")
@@ -17,5 +18,6 @@ struct LocalizedStrings {
     static let EventDatesPlaceHolder = NSLocalizedString("Event Dates", comment: "")
     static let EventLocation = NSLocalizedString("Location:", comment: "")
     static let EventLocationPlaceHolder = NSLocalizedString("Event Location", comment: "")
-    static let ExpireDate = NSLocalizedString("Expire Date:", comment: "")
+    static let Color1 = NSLocalizedString("Color1:", comment: "")
+    static let Color2 = NSLocalizedString("Color2:", comment: "")
 }
