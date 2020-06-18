@@ -1,0 +1,56 @@
+{
+    "formatVersion": 1,
+    "passTypeIdentifier": "pass.com.hyperartflow.wwdc-tickets",
+    "teamIdentifier": "9P895LY647",
+    "associatedStoreIdentifiers": [0],
+    "authenticationToken": "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+    "serialNumber": "9P895LY647",
+    "expirationDate": "2099-06-29T23:59-07:00",
+    "beacons": [{
+        "relevantText": "Check in to WWDC20.",
+        "proximityUUID": "-",
+        "major": 1
+    }],
+    "barcode": {
+        "message": "{\"badge_id\":\"9P895LY647\"}",
+        "format": "PKBarcodeFormatPDF417",
+        "messageEncoding": "iso-8859-1"
+    },
+    "foregroundColor": "rgb(255, 255, 255)",
+    "labelColor": "rgb(255, 255, 255)",
+    "organizationName": "WWDC20",
+    "description": "WWDC20 Ticket",
+    "eventTicket": {
+        "primaryFields": [{
+            "key": "attendee",
+            "label": "ATTENDEE",
+            "value": "Xiang"
+        }],
+        "secondaryFields": [{
+            "key": "DATES",
+            "label": "DATES",
+            "value": "June 22-26, 2020"
+        }],
+        "auxiliaryFields": [{
+            "key": "location",
+            "label": "LOCATION",
+            "value": "Online"
+        }],
+        "backFields": [{
+            "key": "statement",
+            "label": "STATEMENT",
+            "value": "🦄️ This pass is unofficially generated for entertainment use only.\n"
+        }, {
+            "key": "conference-information",
+            "label": "CONFERENCE INFORMATION",
+            "value": "For more details, visit developer.apple.com/wwdc/attending",
+            "attributedValue": "For conference details, visit the <a href=https://developer.apple.com/wwdc/attending/>WWDC website</a>."
+        }, {
+            "key": "ticket-details",
+            "label": "TICKET DETAIL",
+            "value": "Attendee"
+        }]
+    },
+    "backgroundColor": "rgb(218, 77, 115)",
+    "webServiceURL": "https://krakatau.apple.com/passkit"
+}
