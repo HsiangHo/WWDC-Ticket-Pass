@@ -22,7 +22,7 @@ class PassGenerator: NSObject {
         Bundle.main.resourceURL!.appendingPathComponent("t/template.pass")
     }
 
-    func package(config: PassConfiguration, to: URL) throws {
+    func package(config: PassConfiguration, to: URL, needSign: Bool = true) throws {
         /// Copy template
         let dest = to.appendingPathComponent("WWDC.pass")
         if !FileManager.default.fileExists(atPath: passTemplateURL.path) {
@@ -54,7 +54,9 @@ class PassGenerator: NSObject {
         imageURL = dest.appendingPathComponent("background@3x.png")
         makeBackgroundImage(size: imageSize, config: config, to: imageURL)
 
-        try sign(packageURL: dest)
+        if needSign {
+            try sign(packageURL: dest)
+        }
     }
 }
 
