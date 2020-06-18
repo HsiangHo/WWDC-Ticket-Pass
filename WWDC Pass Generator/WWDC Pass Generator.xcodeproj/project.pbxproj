@@ -24,6 +24,7 @@
 		98BE4F4F249B63DF00F44EAB /* t in Resources */ = {isa = PBXBuildFile; fileRef = 98BE4F4E249B63DF00F44EAB /* t */; };
 		98BE4F51249B63EC00F44EAB /* signpass in Resources */ = {isa = PBXBuildFile; fileRef = 98BE4F50249B63EC00F44EAB /* signpass */; };
 		98BE4F58249B838300F44EAB /* PassJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F57249B838300F44EAB /* PassJsonModel.swift */; };
+		98BE4F5A249B93F400F44EAB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F59249B93F400F44EAB /* DateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		98BE4F4E249B63DF00F44EAB /* t */ = {isa = PBXFileReference; lastKnownFileType = folder; path = t; sourceTree = "<group>"; };
 		98BE4F50249B63EC00F44EAB /* signpass */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = signpass; path = ../../signpass; sourceTree = "<group>"; };
 		98BE4F57249B838300F44EAB /* PassJsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassJsonModel.swift; sourceTree = "<group>"; };
+		98BE4F59249B93F400F44EAB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				984E21BF2498E9DE00560E2C /* ColorExtension.swift */,
 				981DCE9324991D2E003CF077 /* FontExtension.swift */,
+				98BE4F59249B93F400F44EAB /* DateExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				981DCE9624992016003CF077 /* InspectorView.swift in Sources */,
 				981DCE9424991D2E003CF077 /* FontExtension.swift in Sources */,
 				98BE4F20249A4A4700F44EAB /* LocalizedStrings.swift in Sources */,
+				98BE4F5A249B93F400F44EAB /* DateExtension.swift in Sources */,
 				98BE4F2E249B61DB00F44EAB /* PassGenerator.swift in Sources */,
 				984E21952498904D00560E2C /* ContentView.swift in Sources */,
 				981DCE982499AF43003CF077 /* PassConfiguration.swift in Sources */,
