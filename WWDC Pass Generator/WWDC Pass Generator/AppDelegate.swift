@@ -15,6 +15,8 @@ extension NSToolbarItem.Identifier {
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    @ObservedObject var config = PassConfiguration()
+
     var window: NSWindow!
     let toolbarTabsIdentifierArray: [NSToolbarItem.Identifier] = [.generateToolbarIdentifier]
     var generateButton: WPGToolbarButton!
@@ -22,7 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+        let contentView = ContentView(passConfiguration: config)
 
         let windowStyles: NSWindow.StyleMask = [.titled, .closable, .miniaturizable]
         let windowRect = NSRect.init(x: 0, y: 0, width: 700, height: 400)
@@ -102,10 +104,37 @@ extension AppDelegate {
     }
 
     @IBAction func generatePackage_click(sender: Any?) {
-
+        let savePanel = NSSavePanel()
+        savePanel.nameFieldStringValue = "WWDC_Ticket_Pass_" + Date.init().toString(dateFormat: "yyyyMMddHHmmss")
+        savePanel.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.modalPanelWindow)))
+        let handler: (NSApplication.ModalResponse) -> Void = { (result) in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue,
+                let url = savePanel.url {
+                try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+                DispatchQueue.main.async {
+                    try? PassGenerator.shared.package(config: self.config,
+                                                      to: url,
+                                                      needSign: false)
+                }
+            }
+        }
+        savePanel.beginSheetModal(for: self.window, completionHandler: handler)
     }
 
     @IBAction func generatePkpass_click(sender: Any?) {
-
+        let savePanel = NSSavePanel()
+        savePanel.nameFieldStringValue = "WWDC_Ticket_Pass_" + Date.init().toString(dateFormat: "yyyyMMddHHmmss")
+        savePanel.level = NSWindow.Level(rawValue: Int(CGWindowLevelForKey(.modalPanelWindow)))
+        let handler: (NSApplication.ModalResponse) -> Void = { (result) in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue,
+                let url = savePanel.url {
+                try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+                DispatchQueue.main.async {
+                    try? PassGenerator.shared.package(config: self.config,
+                                                      to: url)
+                }
+            }
+        }
+        savePanel.beginSheetModal(for: self.window, completionHandler: handler)
     }
 }
