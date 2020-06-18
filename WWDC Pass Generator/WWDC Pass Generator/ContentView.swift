@@ -22,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         HStack() {
             VStack(alignment: .leading) {
-                Text("WWDC Ticket")
+                Text(LocalizedStrings.WWDCTicket)
                     .font(.appFont(size: 12))
                     .fontWeight(.medium)
                     .padding(.bottom, 5)
@@ -31,14 +31,14 @@ struct ContentView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                 ticketPassView
                     .padding(EdgeInsets(top: 0, leading: 50, bottom: 20, trailing: 50))
-                Text("Live Preview")
+                Text(LocalizedStrings.LivePreview)
                     .font(.appFont(size: 10))
                     .foregroundColor(.gray)
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 0))
             }
             Divider()
             VStack(alignment: .leading) {
-                Text("Attributes Inspector")
+                Text(LocalizedStrings.AttributesInspector)
                     .font(.appFont(size: 10))
                     .fontWeight(.medium)
                     .padding(EdgeInsets(top: 15, leading: 10, bottom: 0, trailing: 10))
