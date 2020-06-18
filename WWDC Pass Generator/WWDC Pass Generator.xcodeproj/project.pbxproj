@@ -19,6 +19,7 @@
 		984E21C02498E9DE00560E2C /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E21BF2498E9DE00560E2C /* ColorExtension.swift */; };
 		98BE4F20249A4A4700F44EAB /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F1F249A4A4700F44EAB /* LocalizedStrings.swift */; };
 		98BE4F23249A6F1A00F44EAB /* EmbeddedColorWell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F22249A6F1A00F44EAB /* EmbeddedColorWell.swift */; };
+		98BE4F2B249B4A9500F44EAB /* WPGToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F2A249B4A9500F44EAB /* WPGToolbarButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		984E21BF2498E9DE00560E2C /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		98BE4F1F249A4A4700F44EAB /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		98BE4F22249A6F1A00F44EAB /* EmbeddedColorWell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedColorWell.swift; sourceTree = "<group>"; };
+		98BE4F2A249B4A9500F44EAB /* WPGToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPGToolbarButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				984E21BB2498DD0F00560E2C /* TicketPassView.swift */,
 				981DCE9524992016003CF077 /* InspectorView.swift */,
 				98BE4F22249A6F1A00F44EAB /* EmbeddedColorWell.swift */,
+				98BE4F2A249B4A9500F44EAB /* WPGToolbarButton.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98BE4F2B249B4A9500F44EAB /* WPGToolbarButton.swift in Sources */,
 				981DCE9624992016003CF077 /* InspectorView.swift in Sources */,
 				981DCE9424991D2E003CF077 /* FontExtension.swift in Sources */,
 				98BE4F20249A4A4700F44EAB /* LocalizedStrings.swift in Sources */,
