@@ -20,6 +20,9 @@
 		98BE4F20249A4A4700F44EAB /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F1F249A4A4700F44EAB /* LocalizedStrings.swift */; };
 		98BE4F23249A6F1A00F44EAB /* EmbeddedColorWell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F22249A6F1A00F44EAB /* EmbeddedColorWell.swift */; };
 		98BE4F2B249B4A9500F44EAB /* WPGToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F2A249B4A9500F44EAB /* WPGToolbarButton.swift */; };
+		98BE4F2E249B61DB00F44EAB /* PassGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F2D249B61DB00F44EAB /* PassGenerator.swift */; };
+		98BE4F4F249B63DF00F44EAB /* t in Resources */ = {isa = PBXBuildFile; fileRef = 98BE4F4E249B63DF00F44EAB /* t */; };
+		98BE4F51249B63EC00F44EAB /* signpass in Resources */ = {isa = PBXBuildFile; fileRef = 98BE4F50249B63EC00F44EAB /* signpass */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		98BE4F1F249A4A4700F44EAB /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		98BE4F22249A6F1A00F44EAB /* EmbeddedColorWell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedColorWell.swift; sourceTree = "<group>"; };
 		98BE4F2A249B4A9500F44EAB /* WPGToolbarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WPGToolbarButton.swift; sourceTree = "<group>"; };
+		98BE4F2D249B61DB00F44EAB /* PassGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassGenerator.swift; sourceTree = "<group>"; };
+		98BE4F4E249B63DF00F44EAB /* t */ = {isa = PBXFileReference; lastKnownFileType = folder; path = t; sourceTree = "<group>"; };
+		98BE4F50249B63EC00F44EAB /* signpass */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = signpass; path = ../../signpass; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,10 +76,10 @@
 		984E21912498904D00560E2C /* WWDC Pass Generator */ = {
 			isa = PBXGroup;
 			children = (
-				981DCE972499AF43003CF077 /* PassConfiguration.swift */,
 				98BE4F1F249A4A4700F44EAB /* LocalizedStrings.swift */,
-				98BE4F21249A543300F44EAB /* Views */,
 				984E21922498904D00560E2C /* AppDelegate.swift */,
+				98BE4F2C249B608F00F44EAB /* Pass */,
+				98BE4F21249A543300F44EAB /* Views */,
 				984E21BD2498E9C500560E2C /* Extensions */,
 				984E21BA2498D57A00560E2C /* Support Files */,
 				984E21982498905000560E2C /* Preview Content */,
@@ -92,6 +98,8 @@
 		984E21BA2498D57A00560E2C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				98BE4F50249B63EC00F44EAB /* signpass */,
+				98BE4F4E249B63DF00F44EAB /* t */,
 				984E21962498905000560E2C /* Assets.xcassets */,
 				984E219B2498905000560E2C /* Main.storyboard */,
 				984E219E2498905000560E2C /* Info.plist */,
@@ -118,6 +126,15 @@
 				98BE4F2A249B4A9500F44EAB /* WPGToolbarButton.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		98BE4F2C249B608F00F44EAB /* Pass */ = {
+			isa = PBXGroup;
+			children = (
+				981DCE972499AF43003CF077 /* PassConfiguration.swift */,
+				98BE4F2D249B61DB00F44EAB /* PassGenerator.swift */,
+			);
+			name = Pass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,8 +196,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				984E219D2498905000560E2C /* Main.storyboard in Resources */,
+				98BE4F51249B63EC00F44EAB /* signpass in Resources */,
 				984E219A2498905000560E2C /* Preview Assets.xcassets in Resources */,
 				984E21972498905000560E2C /* Assets.xcassets in Resources */,
+				98BE4F4F249B63DF00F44EAB /* t in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +214,7 @@
 				981DCE9624992016003CF077 /* InspectorView.swift in Sources */,
 				981DCE9424991D2E003CF077 /* FontExtension.swift in Sources */,
 				98BE4F20249A4A4700F44EAB /* LocalizedStrings.swift in Sources */,
+				98BE4F2E249B61DB00F44EAB /* PassGenerator.swift in Sources */,
 				984E21952498904D00560E2C /* ContentView.swift in Sources */,
 				981DCE982499AF43003CF077 /* PassConfiguration.swift in Sources */,
 				984E21932498904D00560E2C /* AppDelegate.swift in Sources */,
