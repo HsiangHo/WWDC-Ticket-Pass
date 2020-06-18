@@ -22,10 +22,25 @@
 		98BE4F2B249B4A9500F44EAB /* WPGToolbarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F2A249B4A9500F44EAB /* WPGToolbarButton.swift */; };
 		98BE4F2E249B61DB00F44EAB /* PassGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F2D249B61DB00F44EAB /* PassGenerator.swift */; };
 		98BE4F4F249B63DF00F44EAB /* t in Resources */ = {isa = PBXBuildFile; fileRef = 98BE4F4E249B63DF00F44EAB /* t */; };
-		98BE4F51249B63EC00F44EAB /* signpass in Resources */ = {isa = PBXBuildFile; fileRef = 98BE4F50249B63EC00F44EAB /* signpass */; };
 		98BE4F58249B838300F44EAB /* PassJsonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F57249B838300F44EAB /* PassJsonModel.swift */; };
 		98BE4F5A249B93F400F44EAB /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F59249B93F400F44EAB /* DateExtension.swift */; };
+		98BE4F5C249B9B5800F44EAB /* signpass in Signpass */ = {isa = PBXBuildFile; fileRef = 98BE4F50249B63EC00F44EAB /* signpass */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		98BE4F68249B9C4700F44EAB /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F67249B9C4700F44EAB /* Utility.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		98BE4F5B249B9B4700F44EAB /* Signpass */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				98BE4F5C249B9B5800F44EAB /* signpass in Signpass */,
+			);
+			name = Signpass;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		981DCE9324991D2E003CF077 /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
@@ -48,6 +63,7 @@
 		98BE4F50249B63EC00F44EAB /* signpass */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; name = signpass; path = ../../signpass; sourceTree = "<group>"; };
 		98BE4F57249B838300F44EAB /* PassJsonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassJsonModel.swift; sourceTree = "<group>"; };
 		98BE4F59249B93F400F44EAB /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		98BE4F67249B9C4700F44EAB /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +98,7 @@
 			children = (
 				98BE4F1F249A4A4700F44EAB /* LocalizedStrings.swift */,
 				984E21922498904D00560E2C /* AppDelegate.swift */,
+				98BE4F67249B9C4700F44EAB /* Utility.swift */,
 				98BE4F2C249B608F00F44EAB /* Pass */,
 				98BE4F21249A543300F44EAB /* Views */,
 				984E21BD2498E9C500560E2C /* Extensions */,
@@ -153,6 +170,7 @@
 				984E218B2498904D00560E2C /* Sources */,
 				984E218C2498904D00560E2C /* Frameworks */,
 				984E218D2498904D00560E2C /* Resources */,
+				98BE4F5B249B9B4700F44EAB /* Signpass */,
 			);
 			buildRules = (
 			);
@@ -202,7 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				984E219D2498905000560E2C /* Main.storyboard in Resources */,
-				98BE4F51249B63EC00F44EAB /* signpass in Resources */,
 				984E219A2498905000560E2C /* Preview Assets.xcassets in Resources */,
 				984E21972498905000560E2C /* Assets.xcassets in Resources */,
 				98BE4F4F249B63DF00F44EAB /* t in Resources */,
@@ -216,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98BE4F68249B9C4700F44EAB /* Utility.swift in Sources */,
 				98BE4F58249B838300F44EAB /* PassJsonModel.swift in Sources */,
 				98BE4F2B249B4A9500F44EAB /* WPGToolbarButton.swift in Sources */,
 				981DCE9624992016003CF077 /* InspectorView.swift in Sources */,
