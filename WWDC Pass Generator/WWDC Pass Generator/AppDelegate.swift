@@ -10,15 +10,15 @@ import Cocoa
 import SwiftUI
 
 extension NSToolbarItem.Identifier {
-    static let exportToolbarIdentifier = NSToolbarItem.Identifier(rawValue: "exportToolbarIdentifier")
+    static let generateToolbarIdentifier = NSToolbarItem.Identifier(rawValue: "generateToolbarIdentifier")
 }
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     var window: NSWindow!
-    let toolbarTabsIdentifierArray: [NSToolbarItem.Identifier] = [.exportToolbarIdentifier]
-    var exportButton: WPGToolbarButton!
-    var exportMenu: NSMenu = NSMenu.init(title: "exportMenu")
+    let toolbarTabsIdentifierArray: [NSToolbarItem.Identifier] = [.generateToolbarIdentifier]
+    var generateButton: WPGToolbarButton!
+    var generateMenu: NSMenu = NSMenu.init(title: "generateMenu")
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Create the SwiftUI view that provides the window contents.
@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.titlebarAppearsTransparent = false
         window.toolbar = NSToolbar.init(identifier: "toolbar")
         window.toolbar?.delegate = self
-        window.toolbar?.insertItem(withItemIdentifier: .exportToolbarIdentifier, at: 0)
+        window.toolbar?.insertItem(withItemIdentifier: .generateToolbarIdentifier, at: 0)
         window.toolbar?.insertItem(withItemIdentifier: .flexibleSpace, at: 0)
         window.setFrameAutosaveName("Main Window")
         window.contentView = NSHostingView(rootView: contentView)
@@ -41,14 +41,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         window.makeKeyAndOrderFront(nil)
         NSApp.activate(ignoringOtherApps: true)
 
-        let exportPackageMenuItem = NSMenuItem.init(title: LocalizedStrings.ExportPassPackage, action: #selector(exportPackage_click(sender:)), keyEquivalent: "")
-        exportPackageMenuItem.target = self
+        let generatePackageMenuItem = NSMenuItem.init(title: LocalizedStrings.GeneratePassPackage, action: #selector(generatePackage_click(sender:)), keyEquivalent: "")
+        generatePackageMenuItem.target = self
 
-        let exportPkpassMenuItem = NSMenuItem.init(title: LocalizedStrings.ExportPkpassFile, action: #selector(exportPkpass_click(sender:)), keyEquivalent: "")
-        exportPkpassMenuItem.target = self
+        let generatePkpassMenuItem = NSMenuItem.init(title: LocalizedStrings.GeneratePkpassFile, action: #selector(generatePkpass_click(sender:)), keyEquivalent: "")
+        generatePkpassMenuItem.target = self
 
-        exportMenu.addItem(exportPackageMenuItem)
-        exportMenu.addItem(exportPkpassMenuItem)
+        generateMenu.addItem(generatePackageMenuItem)
+        generateMenu.addItem(generatePkpassMenuItem)
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -66,18 +66,18 @@ extension AppDelegate: NSToolbarDelegate {
                  willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem? {
         let toolbarItem = NSToolbarItem(itemIdentifier: itemIdentifier)
 
-        if itemIdentifier == .exportToolbarIdentifier {
-            exportButton = WPGToolbarButton.init(frame: NSRect(x: 0, y: 0, width: 43, height: 27))
+        if itemIdentifier == .generateToolbarIdentifier {
+            generateButton = WPGToolbarButton.init(frame: NSRect(x: 0, y: 0, width: 43, height: 27))
             let image = NSImage.init(named: "export")
             image?.isTemplate = true
             image?.size = NSSize.init(width: 14, height: 15)
-            exportButton.image = image
-            exportButton.toolTip = LocalizedStrings.Export
-            toolbarItem.view = exportButton
-            toolbarItem.minSize = exportButton.frame.size
-            toolbarItem.maxSize = exportButton.frame.size
+            generateButton.image = image
+            generateButton.toolTip = LocalizedStrings.Generate
+            toolbarItem.view = generateButton
+            toolbarItem.minSize = generateButton.frame.size
+            toolbarItem.maxSize = generateButton.frame.size
             toolbarItem.target = self
-            toolbarItem.action = #selector(exportMenu_click(sender:))
+            toolbarItem.action = #selector(generateMenu_click(sender:))
         }
 
         return toolbarItem
@@ -97,15 +97,15 @@ extension AppDelegate: NSToolbarDelegate {
 }
 
 extension AppDelegate {
-    @IBAction func exportMenu_click(sender: Any?) {
-        NSMenu.popUpContextMenu(exportMenu, with: NSApp.currentEvent!, for: sender as! NSView)
+    @IBAction func generateMenu_click(sender: Any?) {
+        NSMenu.popUpContextMenu(generateMenu, with: NSApp.currentEvent!, for: sender as! NSView)
     }
 
-    @IBAction func exportPackage_click(sender: Any?) {
+    @IBAction func generatePackage_click(sender: Any?) {
 
     }
 
-    @IBAction func exportPkpass_click(sender: Any?) {
+    @IBAction func generatePkpass_click(sender: Any?) {
 
     }
 }

@@ -9,9 +9,9 @@
 import Foundation
 
 struct LocalizedStrings {
-    static let Export = NSLocalizedString("Export", comment: "")
-    static let ExportPassPackage = NSLocalizedString("Export pass package...", comment: "")
-    static let ExportPkpassFile = NSLocalizedString("Export pkpass file...", comment: "")
+    static let Generate = NSLocalizedString("Generate", comment: "")
+    static let GeneratePassPackage = NSLocalizedString("Generate pass package...", comment: "")
+    static let GeneratePkpassFile = NSLocalizedString("Generate pkpass file...", comment: "")
     static let Event = NSLocalizedString("Event:", comment: "")
     static let EventPlaceHolder = NSLocalizedString("WWDC Event Name", comment: "")
     static let EventAttendee = NSLocalizedString("Attendee:", comment: "")
