@@ -22,6 +22,7 @@ class PassGenerator: NSObject {
     }
 
     func package(config: PassConfiguration, to: URL) throws {
+        /// Copy template
         let dest = to.appendingPathComponent("WWDC.pass")
         if !FileManager.default.fileExists(atPath: passTemplateURL.path) {
             throw PassGeneratorError.invalidTemplate
@@ -35,13 +36,27 @@ class PassGenerator: NSObject {
             throw PassGeneratorError.saveFailed
         }
 
+        /// Edit json
         let jsonURL = dest.appendingPathComponent("pass.json")
         try fillInJson(jsonURL: jsonURL, config: config)
+
+        /// Make images
+        var imageSize = NSSize.init(width: 180, height: 220)
+        var imageURL = dest.appendingPathComponent("background.png")
+        makeBackgroundImage(size: imageSize, config: config, to: imageURL)
+
+        imageSize = NSSize.init(width: 360, height: 440)
+        imageURL = dest.appendingPathComponent("background@2x.png")
+        makeBackgroundImage(size: imageSize, config: config, to: imageURL)
+
+        imageSize = NSSize.init(width: 540, height: 660)
+        imageURL = dest.appendingPathComponent("background@3x.png")
+        makeBackgroundImage(size: imageSize, config: config, to: imageURL)
     }
 }
 
 extension PassGenerator {
-    func fillInJson(jsonURL: URL, config: PassConfiguration) throws  {
+    private func fillInJson(jsonURL: URL, config: PassConfiguration) throws  {
         let decoder = JSONDecoder()
         guard let model = try? decoder.decode(PassJsonModel.self, from: Data.init(contentsOf: jsonURL)) else {
             throw PassGeneratorError.invalidTemplate
@@ -71,5 +86,23 @@ extension PassGenerator {
         } catch {
             throw PassGeneratorError.saveFailed
         }
+    }
+
+    private func makeBackgroundImage(size: NSSize, config: PassConfiguration, to: URL) {
+        guard let rep = NSBitmapImageRep(bitmapDataPlanes: nil, pixelsWide: Int(size.width), pixelsHigh: Int(size.height), bitsPerSample: 8, samplesPerPixel: 4, hasAlpha: true, isPlanar: false, colorSpaceName: NSColorSpaceName.deviceRGB, bytesPerRow: 0, bitsPerPixel: 0) else {
+                return
+        }
+        NSGraphicsContext.saveGraphicsState()
+        NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: rep)
+
+        let rect = NSMakeRect(0, 0, size.width, size.height)
+        let gradient = NSGradient.init(starting: config.color1.nsColor, ending: config.color2.nsColor)
+        gradient?.draw(in: rect, angle: 270)
+        
+        NSGraphicsContext.restoreGraphicsState()
+        guard let data = rep.representation(using: NSBitmapImageRep.FileType.png, properties: [NSBitmapImageRep.PropertyKey.compressionFactor: 1.0]) else {
+            return
+        }
+        try? data.write(to: to, options: .atomic)
     }
 }
