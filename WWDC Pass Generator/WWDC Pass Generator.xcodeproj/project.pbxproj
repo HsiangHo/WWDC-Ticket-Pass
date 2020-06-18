@@ -18,6 +18,7 @@
 		984E21BC2498DD0F00560E2C /* TicketPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E21BB2498DD0F00560E2C /* TicketPassView.swift */; };
 		984E21C02498E9DE00560E2C /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984E21BF2498E9DE00560E2C /* ColorExtension.swift */; };
 		98BE4F20249A4A4700F44EAB /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F1F249A4A4700F44EAB /* LocalizedStrings.swift */; };
+		98BE4F23249A6F1A00F44EAB /* EmbeddedColorWell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BE4F22249A6F1A00F44EAB /* EmbeddedColorWell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		984E21BB2498DD0F00560E2C /* TicketPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPassView.swift; sourceTree = "<group>"; };
 		984E21BF2498E9DE00560E2C /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		98BE4F1F249A4A4700F44EAB /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
+		98BE4F22249A6F1A00F44EAB /* EmbeddedColorWell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbeddedColorWell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				984E21942498904D00560E2C /* ContentView.swift */,
 				984E21BB2498DD0F00560E2C /* TicketPassView.swift */,
 				981DCE9524992016003CF077 /* InspectorView.swift */,
+				98BE4F22249A6F1A00F44EAB /* EmbeddedColorWell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				981DCE982499AF43003CF077 /* PassConfiguration.swift in Sources */,
 				984E21932498904D00560E2C /* AppDelegate.swift in Sources */,
 				984E21BC2498DD0F00560E2C /* TicketPassView.swift in Sources */,
+				98BE4F23249A6F1A00F44EAB /* EmbeddedColorWell.swift in Sources */,
 				984E21C02498E9DE00560E2C /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
