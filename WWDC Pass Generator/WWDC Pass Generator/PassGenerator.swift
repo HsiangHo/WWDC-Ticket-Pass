@@ -101,7 +101,7 @@ extension PassGenerator {
         NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: rep)
 
         let rect = NSMakeRect(0, 0, size.width, size.height)
-        let gradient = NSGradient.init(starting: config.color1.nsColor, ending: config.color2.nsColor)
+        let gradient = NSGradient.init(starting: config.color1, ending: config.color2)
         gradient?.draw(in: rect, angle: 270)
         
         NSGraphicsContext.restoreGraphicsState()

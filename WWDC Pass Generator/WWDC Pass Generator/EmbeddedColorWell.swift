@@ -12,8 +12,7 @@ import SwiftUI
 import Combine
 
 struct EmbeddedColorWell: NSViewRepresentable {
-    @Binding var selectedColor: Color
-    var cachedColor: NSColor?
+    @Binding var selectedColor: NSColor
 
     class Coordinator: NSObject {
         var embedded: EmbeddedColorWell
@@ -30,7 +29,7 @@ struct EmbeddedColorWell: NSViewRepresentable {
                 .publisher(for: \.color, options: .new)
                 .sink { color in
                     DispatchQueue.main.async {
-                        self.embedded.selectedColor = Color(color)
+                        self.embedded.selectedColor = color
                     }
             }
         }
@@ -42,7 +41,7 @@ struct EmbeddedColorWell: NSViewRepresentable {
 
     func makeNSView(context: Context) -> NSColorWell {
         let colorWell = NSColorWell(frame: .zero)
-        colorWell.color = selectedColor.nsColor
+        colorWell.color = selectedColor
         context.coordinator.changeColor(colorWell: colorWell)
         return colorWell
     }
@@ -52,7 +51,7 @@ struct EmbeddedColorWell: NSViewRepresentable {
 }
 
 struct EmbeddedColorWell_Previews: PreviewProvider {
-    @State static var color: Color = .black
+    @State static var color: NSColor = .black
     static var previews: some View {
         EmbeddedColorWell(selectedColor: $color)
     }
