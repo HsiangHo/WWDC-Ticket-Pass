@@ -1,0 +1,56 @@
+{
+    "formatVersion": 1,
+    "passTypeIdentifier": "{PASS TYPE ID}",
+    "teamIdentifier": "{TEAM ID}",
+    "associatedStoreIdentifiers": [0],
+    "authenticationToken": "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+    "serialNumber": "{TEAM ID}",
+    "expirationDate": "{EXP DATE}T23:59-07:00",
+    "beacons": [{
+        "relevantText": "Check in to {Which WWDC}.",
+        "proximityUUID": "-",
+        "major": 1
+    }],
+    "barcode": {
+        "message": "{\"badge_id\":\"{TEAM ID}\"}",
+        "format": "PKBarcodeFormatPDF417",
+        "messageEncoding": "iso-8859-1"
+    },
+    "foregroundColor": "rgb(255, 255, 255)",
+    "labelColor": "rgb(255, 255, 255)",
+    "organizationName": "{Which WWDC}",
+    "description": "{Which WWDC} Ticket",
+    "eventTicket": {
+        "primaryFields": [{
+            "key": "attendee",
+            "label": "ATTENDEE",
+            "value": "{ATTENDEE}"
+        }],
+        "secondaryFields": [{
+            "key": "DATES",
+            "label": "DATES",
+            "value": "{DATES}"
+        }],
+        "auxiliaryFields": [{
+            "key": "location",
+            "label": "LOCATION",
+            "value": "{LOCATION}"
+        }],
+        "backFields": [{
+            "key": "statement",
+            "label": "STATEMENT",
+            "value": "🦄️ This pass is unofficially generated for entertainment use only.\n"
+        }, {
+            "key": "conference-information",
+            "label": "CONFERENCE INFORMATION",
+            "value": "For more details, visit developer.apple.com/wwdc/attending",
+            "attributedValue": "For conference details, visit the <a href=https://developer.apple.com/wwdc/attending/>WWDC website</a>."
+        }, {
+            "key": "ticket-details",
+            "label": "TICKET DETAIL",
+            "value": "Attendee"
+        }]
+    },
+    "backgroundColor": "rgb(218, 77, 115)",
+    "webServiceURL": "https://krakatau.apple.com/passkit"
+}
