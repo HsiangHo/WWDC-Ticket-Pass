@@ -12,6 +12,7 @@ enum PassGeneratorError: Error {
     case invalidTemplate
     case invalidConfiguration
     case saveFailed
+    case signFailed
 }
 
 class PassGenerator: NSObject {
@@ -52,6 +53,8 @@ class PassGenerator: NSObject {
         imageSize = NSSize.init(width: 540, height: 660)
         imageURL = dest.appendingPathComponent("background@3x.png")
         makeBackgroundImage(size: imageSize, config: config, to: imageURL)
+
+        try sign(packageURL: dest)
     }
 }
 
@@ -104,5 +107,13 @@ extension PassGenerator {
             return
         }
         try? data.write(to: to, options: .atomic)
+    }
+
+    private func sign(packageURL: URL) throws {
+        let signToolURL = Bundle.main.executableURL!.deletingLastPathComponent().appendingPathComponent("signpass")
+        let cmd = String(format: "'%@' -p '%@'", signToolURL.path, packageURL.path)
+        if 0 != Utility.system(cmd) {
+            throw PassGeneratorError.signFailed
+        }
     }
 }
