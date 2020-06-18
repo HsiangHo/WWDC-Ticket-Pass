@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var passConfiguration = PassConfiguration()
+    @ObservedObject var passConfiguration: PassConfiguration
 
     var ticketPassView: TicketPassView {
         TicketPassView(config: passConfiguration)
@@ -52,7 +52,9 @@ struct ContentView: View {
 
 
 struct ContentView_Previews: PreviewProvider {
+    @ObservedObject static var config = PassConfiguration()
+
     static var previews: some View {
-        ContentView()
+        ContentView(passConfiguration: config)
     }
 }
