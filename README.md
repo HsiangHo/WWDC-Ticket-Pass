@@ -27,8 +27,16 @@ I've generated a demo pkpass file (Demo.pkpass) and you can Airdrop it to your i
 <img src="Docs/Generator.png" width="380px">
 <img src="Docs/Generate.png" width="380px">
 <img src="Docs/Sign.png" width="380px">
-<img src="Docs/Airdrop.png" width="380px">
 
 #### Manual
-<img src="Docs/Json.png" width="380px">
+Re-edit the json file in Demo.pass folder  
+<img src="Docs/Json.png" width="380px">  
+Sign to generate pkpass file using signpass  
+```
+./signpass -p ./Demo.pass
+```
 <img src="Docs/Manual.png" width="380px">
+
+## Airdrop to Wallet
+<img src="Docs/Airdrop.png" width="380px">
+
