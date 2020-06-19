@@ -2,7 +2,7 @@
 [![Platform](https://img.shields.io/badge/platform-macOS%2010.15%2B-orange.svg)](https://github.com/HsiangHo/WWDC-Ticket-Pass)
 [![Language](https://img.shields.io/badge/language-swift%205.2-red.svg)](https://github.com/HsiangHo/WWDC-Ticket-Pass)
 
-Design and generate your own WWDC20 ticket pass and add it to your wallet.
+### Design and generate your own WWDC20 ticket pass and add it to your wallet.
 
 <img src="Docs/Wallet.png" width="380px">
 
