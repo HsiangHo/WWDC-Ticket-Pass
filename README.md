@@ -10,6 +10,9 @@
 
 I've generated a demo pkpass file (Demo.pkpass) and you can Airdrop it to your iPhone, it will be directly added to Wallet.
 
+### Generate Online
+Thanks to [Ayden Panhuyzen](https://github.com/aydenp), we can directly [generate the pass online](https://ayden.dev/wwdc20/) and add it to Wallet.
+
 ## Requirements
 
 - Paid Apple Developer Account (To sign your pkpass file)
