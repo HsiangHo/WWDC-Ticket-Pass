@@ -70,7 +70,7 @@ extension PassGenerator {
         var jsonModel = model
         jsonModel.passTypeIdentifier = config.passTypeID
         jsonModel.teamIdentifier = config.teamID
-        jsonModel.serialNumber = config.teamID
+        jsonModel.serialNumber = NSUUID().uuidString
         jsonModel.expirationDate = "\(config.expiryDate.toString(dateFormat: "yyyy-MM-dd"))T23:59-07:00"
         jsonModel.beacons?[0].relevantText = "Check in to \(config.eventName)."
         jsonModel.barcode?.message = "{\"badge_id\":\"\(config.teamID)\"}"
